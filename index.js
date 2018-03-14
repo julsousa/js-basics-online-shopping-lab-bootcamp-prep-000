@@ -19,35 +19,25 @@ function addToCart(item) {
 }
 
 function viewCart() {
-  var size = cart.length;
-  var cartMessage = 'In your cart, you have';
-  var itemPrice = [];
-  var twoItems = itemPrice.join(' and')     ;          
-  var moreItems = itemPrice.slice(0, itemPrice.length -1).join(' ,');
-  var lastItem = itemPrice[itemPrice.length-1];
+  var cartItems = [];
+  if (cart.length === 0) {
+    console.log('Your shopping cart is empty.')
 
-  if (size === 0) {
-    console.log("Your shopping cart is empty.");
-  }
+  } else if (cart.length === 1) {
+    var printOneItem = `In your cart, you have ${Object.keys(cart[0])} at $${cart[0][Object.keys(cart[0])]}.`
+    console.log(printOneItem)
 
-  else {
-    for (var i=0; i < size; i++) {
-      var cart0 = cart[i];
-      var item = Object.keys(cart0)[i];          
-      var price = cart0[item];          
-
-      itemPrice.push(` ${item} at ${price}`);        
-
-      if (size === 1) {                              
-        console.log(`${cartMessage} ${itemPrice}.`);
-      }
-      if (size === 2) {                               
-        console.log(`${cartMessage} ${twoItems}.`);
-      }
-      if (size >= 3) {                                
-        console.log(`${cartMessage} ${moreItems} and${lastItem}.`);
-      }
-    }
+  } else if (cart.length === 2) {
+    var printTwoItems = `In your cart, you have ${Object.keys(cart[cart.length-2])} at $${cart[cart.length-2][Object.keys(cart[cart.length-2])]} and ${Object.keys(cart[cart.length-1])} at $${cart[cart.length-1][Object.keys(cart[cart.length-1])]}.`
+    console.log(printTwoItems)
+  
+    
+  } else {
+      for (var i = 0; i < cart.length-1; i++) {
+      cartItems.push(` ${Object.keys(cart[i])} at $${cart[i][Object.keys(cart[i])]}`)
+          }
+          var printThreeOrMoreItems = `In your cart, you have${cartItems}, and ${Object.keys(cart[cart.length-1])} at $${cart[cart.length-1][Object.keys(cart[cart.length-1])]}.`
+          console.log(printThreeOrMoreItems)
   }
 }
 
