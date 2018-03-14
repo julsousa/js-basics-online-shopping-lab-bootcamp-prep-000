@@ -19,33 +19,33 @@ function addToCart(item) {
 }
 
 function viewCart() {
- var size = cart.length
-  var cartMessage = 'In your cart, you have'
-  var itemPrice = []
-  var twoItems = itemPrice.join(' and')               
-  var moreItems = itemPrice.slice(0, itemPrice.length -1).join(' ,')
-  var lastItem = itemPrice[itemPrice.length-1]
+ var size = cart.length;
+  var cartMessage = 'In your cart, you have';
+  var itemPrice = [];
+  var twoItems = itemPrice.join(' and')     ;          
+  var moreItems = itemPrice.slice(0, itemPrice.length -1).join(' ,');
+  var lastItem = itemPrice[itemPrice.length-1];
 
   if (size === 0) {
-    console.log("Your shopping cart is empty.")
+    console.log("Your shopping cart is empty.");
   }
 
   else {
     for (var i=0; i < size; i++) {
-      var cart0 = cart[i]
-      var item = Object.keys(cart0)[i]                
-      var price = cart0[item]                       
+      var cart0 = cart[i];
+      var item = Object.keys(cart0)[i];          
+      var price = cart0[item];          
 
-      itemPrice.push(` ${item} at ${price}`)        
+      itemPrice.push(` ${item} at ${price}`);        
 
       if (size === 1) {                              
-        console.log(`${cartMessage} ${itemPrice}.`)
+        console.log(`${cartMessage} ${itemPrice}.`);
       }
       if (size === 2) {                               
-        console.log(`${cartMessage} ${twoItems}.`)
+        console.log(`${cartMessage} ${twoItems}.`);
       }
       if (size >= 3) {                                
-        console.log(`${cartMessage} ${moreItems} and${lastItem}.`)
+        console.log(`${cartMessage} ${moreItems} and${lastItem}.`);
       }
     }
   }
@@ -61,15 +61,15 @@ function total() {
 }
 
 function removeFromCart(item) {
-  var present = false
+  var present = false;
   if (cart.length > 0){
   for (var i = 0; i < cart.length; i++){
     if (cart[i].hasOwnProperty(item) === true){
-      cart.splice(i, 1)
-      console.log(cart)
+      cart.splice(i, 1);
+      console.log(cart);
       present = true}}}
   if (present === false){console.log('That item is not in your cart.')}
-  return cart
+  return cart;
 }
 
 function placeOrder(cardNumber) {
