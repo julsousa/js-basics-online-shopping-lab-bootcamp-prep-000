@@ -19,7 +19,7 @@ function addToCart(item) {
 }
 
 function viewCart() {
- var size = cart.length;
+  var size = cart.length;
   var cartMessage = 'In your cart, you have';
   var itemPrice = [];
   var twoItems = itemPrice.join(' and')     ;          
