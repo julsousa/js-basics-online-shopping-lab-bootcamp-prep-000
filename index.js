@@ -29,7 +29,7 @@ function viewCart() {
   if (size === 0) {
     console.log("Your shopping cart is empty.")
   }
-  //If not empty loop
+
   else {
     for (var i=0; i < size; i++) {
       //Loop Dictionary
