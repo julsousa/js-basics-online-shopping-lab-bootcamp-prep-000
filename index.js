@@ -22,7 +22,7 @@ function viewCart() {
  var size = cart.length
   var cartMessage = 'In your cart, you have'
   var itemPrice = []
-  var twoItems = itemPrice.join(' and')               //returns array with new delimiter
+  var twoItems = itemPrice.join(' and')               
   var moreItems = itemPrice.slice(0, itemPrice.length -1).join(' ,')
   var lastItem = itemPrice[itemPrice.length-1]
   //if empty
@@ -34,18 +34,18 @@ function viewCart() {
     for (var i=0; i < size; i++) {
       //Loop Dictionary
       var cart0 = cart[i]
-      var item = Object.keys(cart0)[i]                //retrieves item as string from cart
-      var price = cart0[item]                         //retrieves price as string from cart
+      var item = Object.keys(cart0)[i]                
+      var price = cart0[item]                       
       //Loop push
-      itemPrice.push(` ${item} at ${price}`)          //adds it to the target array
+      itemPrice.push(` ${item} at ${price}`)        
       //Cart Messages
-      if (size === 1) {                               //if 1 in cart
+      if (size === 1) {                              
         console.log(`${cartMessage} ${itemPrice}.`)
       }
-      if (size === 2) {                               //if 2 in cart
+      if (size === 2) {                               
         console.log(`${cartMessage}${twoItems}.`)
       }
-      if (size >= 3) {                                //if 3 or more in cart
+      if (size >= 3) {                                
         console.log(`${cartMessage}${moreItems} and${lastItem}.`)
       }
     }
