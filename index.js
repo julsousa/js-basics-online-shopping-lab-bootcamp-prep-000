@@ -42,10 +42,10 @@ function viewCart() {
         console.log(`${cartMessage} ${itemPrice}.`)
       }
       if (size === 2) {                               
-        console.log(`${cartMessage}${twoItems}.`)
+        console.log(`${cartMessage} ${twoItems}.`)
       }
       if (size >= 3) {                                
-        console.log(`${cartMessage}${moreItems} and${lastItem}.`)
+        console.log(`${cartMessage} ${moreItems} and${lastItem}.`)
       }
     }
   }
