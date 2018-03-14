@@ -32,13 +32,12 @@ function viewCart() {
 
   else {
     for (var i=0; i < size; i++) {
-      //Loop Dictionary
       var cart0 = cart[i]
       var item = Object.keys(cart0)[i]                
       var price = cart0[item]                       
-      //Loop push
+
       itemPrice.push(` ${item} at ${price}`)        
-      //Cart Messages
+
       if (size === 1) {                              
         console.log(`${cartMessage} ${itemPrice}.`)
       }
