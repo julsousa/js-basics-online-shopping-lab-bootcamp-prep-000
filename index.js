@@ -25,7 +25,7 @@ function viewCart() {
   var twoItems = itemPrice.join(' and')               
   var moreItems = itemPrice.slice(0, itemPrice.length -1).join(' ,')
   var lastItem = itemPrice[itemPrice.length-1]
-  //if empty
+
   if (size === 0) {
     console.log("Your shopping cart is empty.")
   }
